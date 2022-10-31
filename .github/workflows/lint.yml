@@ -1,0 +1,15 @@
+name: Standard formatting check
+
+on: 
+  push: 
+    branches: ["main"]
+  pull_request:
+    branches: [opened, synchronize]
+
+jobs: 
+  lint: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run lint
+        run: yarn lint
