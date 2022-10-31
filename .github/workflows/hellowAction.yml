@@ -8,14 +8,13 @@ on:
     branches: ["main"]
 
 jobs:
-  helloWord:
-      runs-on: ubuntu-latest
-      steps:
-        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - uses: actions/checkout@v3
-        # Runs a single command using the runners shell
-        - name: Talk something...
-          run: echo Hello, world!
+  Basic_Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # Runs a single command using the runners shell
+      - name: Talk something...
+        run: echo Hello, world!
 
-        - name: What are the files ? 
-          run: ls -la
+      - name: What are the files ?
+        run: ls -la
