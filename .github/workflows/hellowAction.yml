@@ -14,5 +14,8 @@ jobs:
         # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
         - uses: actions/checkout@v3
         # Runs a single command using the runners shell
-        - name: Run fist GitHub action
-          run: echo Hello, world by Vítor!
+        - name: Talk something...
+          run: echo Hello, world!
+
+        - name: What are the files ? 
+          run: ls -la
