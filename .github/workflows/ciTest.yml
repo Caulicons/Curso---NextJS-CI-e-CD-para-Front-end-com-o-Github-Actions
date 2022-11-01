@@ -1,20 +1,17 @@
 name: Cypress Testes E2E
 
-on:
+on: 
+  push: 
+    branches: ["main"]
   pull_request:
-    types: [opened, synchronize]
+    types: [opened, synchronize] 
 
 jobs: 
-  test2e2: 
+  testes:
     runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node
-        with: 
-          node-version: 16.13.0
-          cache: "yarn"
-      - name: Cypress
-        uses: cypress-io/github-action@v4
-        with: 
+    steps:      
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v4
+        with:
           browser: edge
 
