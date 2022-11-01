@@ -1,8 +1,6 @@
 name: Cypress Testes E2E
 
-on: 
-  push: 
-    branches: ["main"]
+on:
   pull_request:
     types: [opened, synchronize]
 
