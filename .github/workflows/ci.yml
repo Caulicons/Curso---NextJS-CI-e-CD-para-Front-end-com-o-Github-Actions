@@ -29,3 +29,15 @@ jobs:
         run: yarn install
       - name: Run Deployment preview
         run: yarn deploy:preview
+  teste2e:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - uses: actions/setup-node@v3
+          with: 
+            node-version: 16.13.0
+            cache: 'yarn' 
+        - name: Run Cypress
+          uses: cypress-io/github-action@v4.x.x 
+          with: 
+            browser: firefox
