@@ -1,0 +1,20 @@
+name: CI, Hello word!
+
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: ["main"]
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  Basic_Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # Runs a single command using the runners shell
+      - name: Talk something...
+        run: echo Hello, world!
+
+      - name: What are the files ?
+        run: ls -la
