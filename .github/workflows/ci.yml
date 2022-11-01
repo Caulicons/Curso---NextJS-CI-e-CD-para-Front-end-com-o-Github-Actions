@@ -1,4 +1,4 @@
-name: Standard formatting check
+name: CI testes implementation 
 
 env:
   VERCEL_TOKEN: ${{secrets.VERCEL_TOKEN}}
@@ -38,6 +38,6 @@ jobs:
             node-version: 16.13.0
             cache: 'yarn' 
         - name: Run Cypress
-          uses: cypress-io/github-action@v4.x.x 
+          uses: cypress-io/github-action@v4
           with: 
             browser: firefox
