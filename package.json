@@ -10,7 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "deploy:prod": "yarn deploy:staging --prod",
-    "deploy:staging": "yarn build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN --prod",
+    "deploy:staging": "yarn build && vercel ./build --confirm --no-clipboard --token=$VERCEL_TOKEN",
     "deploy:preview": "node scripts/previewCI.js"
   },
   "dependencies": {
