@@ -1,0 +1,29 @@
+name: Standard formatting check
+
+env:
+  VERCEL_TOKEN: ${{secrets.VERCEL_TOKEN}}
+  VERCEL_ORG_ID: ${{secrets.VERCEL_ORG_ID}}
+  VERCEL_PROJECT_ID: ${{secrets.VERCEL_PROJECT_ID}}
+
+on: 
+  pull_request:
+    types: [opened, synchronize]
+
+jobs: 
+  lint: 
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run installation
+        run: yarn install
+      - name: Run linter
+        run: yarn lint
+  preview: 
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v3
+      - name: Run installation 
+        run: yarn install
+      - name: Run Deployment preview
+        run: yarn deploy:preview
